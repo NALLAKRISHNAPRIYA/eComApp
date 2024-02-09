@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+form {
+    
+	margin: 10;
+	padding: 20;
+	box-sizing: content-box;
+	font-family: 'Poppins', sans-serif;
+	padding: 5px 5px;
+	margin: 2px 2px;
+	box-sizing: border-box;
+}
+
+h1{
+	margin-bottom: -60px;
+	text-align: center;
+ }
+
+
+div {
+	background-position: 20px 20px 20px 20px;
+	padding-top: 10px;
+	// padding-left: 100px;
+	margin-top: 100px;
+	margin-left: 300px;
+	margin-right: 250px;
+	margin-bottom: -90px;
+
+	// border-left: 100px;
+	text-align: center;
+	background-color: rgb(235, 214, 243);
+}
+
+a {
+	text-decoration: light rgb(136, 226, 136);
+	color: rgb(6, 6, 238);
+}
+
+a:hover {
+	text-decoration: underline;
+	color: rgb(195, 3, 3);
+}
+.remember-forget {
+	display: flex;
+	padding-left: 650px;
+	font-size: 18px;
+
+}
+.input-submit {
+	width: 250px;
+	height: 30px;
+	background: #ecbaba;
+	font-size: 18px;
+	font-weight: 300;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: .5s;
+}
+.input-submit:hover {
+	background: rgb(226, 93, 93);
+}
+
+.register {
+	padding-left: 50px;
+}
+.Cancel{
+	padding-bottom: 50px;
+	text-decoration: underline;
+	color: rgb(168, 21, 50);
+}
+.icon{
+	position: absolute;
+	bottom: 5px;
+	left: 370px;
+	font-size: 20px;
+
+}
