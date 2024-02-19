@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eComApp';
-  users: any=[{name: 'Test123'}]
+  constructor() {
+    setTheme('bs5');
+  }
 }
+

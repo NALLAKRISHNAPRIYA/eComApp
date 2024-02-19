@@ -1,29 +1,37 @@
 
-<!-- <meta name="viewport" content="width=50px%, initial-scale=2"> -->
-<form>
-<div>
-    <h1>LOGIN</h1>
-    <div>User Name:<input  [(ngModel)]="userName"></div>
+<div class="login-container">
+    <div class="login-form">
+        <h2>Login Form</h2>
 
-    <div>password:<input  [(ngModel)]="password" type="password">
-        <!-- <i class="bx bx-lock-alt icon"></i> -->
+        <form [formGroup]="loginForm" (ngsubmit)="login()">
+            <div class="imgcontainer">
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container">
+                <div class="error" *ngIf="hasError">Invalid User Name or Password</div>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" (input)="clearError()" formControlName="userName" maxlength="50" placeholder="Enter Username" name="uname">
+                <ng-container *ngIf="(getControl('userName').touched || getControl('userName').dirty) && getControl('userName').invalid">
+                    <div class="error" *ngIf="getControl('userName').errors['required']">User Name is required
+                    </div>
+                </ng-container>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" (input)="clearError()" formControlName="password" placeholder="Enter Password" name="psw">
+                <div class="error" *ngIf="(getControl('password').touched || getControl('password').dirty) && getControl('password').invalid &amp;&amp; getControl('password').errors['required']">
+                    Password is required</div>
+                <div class="error" *ngIf="(getControl('password').touched || getControl('password').dirty) && getControl('password').invalid &amp;&amp; getControl('password').errors['invalidPwd']">
+                    Password is Invalid</div>
+                <button (click)="login()" [disabled]="loginForm.invalid">Login</button><br>
+                <div style="display:flex;"><hr style="width: 100px;">or<hr style="width: 100px;"></div>
+                <label>
+                    <input type="checkbox" formcontrolname="rememberMe" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container links" style="background-color:#f1f1f1">
+                <a routerlink="/registration"><span class="psw">Register</span></a>
+                <a routerlink="/forgotpassword"><span class="psw">Forgot password?</span></a>
+            </div>
+        </form>
     </div>
-    <div class="input_box">
-        <input type="submit" class="input-submit" value="Login">
-    </div>
-    <div class="forget">
-        <a href="#">Forget password?</a>
-    </div>
-    <div class="remember-forget">
-    </div>
-    <div class="register">
-        <span>Don't have an account? <a href="#">Create an Account</a></span>
-    </div>
-    
-    <div class="remember-me">
-            <input type="checkbox" id="remember">
-            <label for="remember">Remember me for 30 days.</label>
-    </div> 
 </div>
-</form>
-
