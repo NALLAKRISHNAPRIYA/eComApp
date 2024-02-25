@@ -16,6 +16,14 @@ import { FooterComponent } from './footer/footer.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { SidenavModule } from './sidenav/sidenav.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SummaryComponent } from './summary/summary.component';
+import { ForgetpwdComponent } from './forgetpwd/forgetpwd.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -26,7 +34,11 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MenuComponent,
     FooterComponent,
     ItemListComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SummaryComponent,
+    ForgetpwdComponent,
+    RegistrationComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +48,13 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatIconModule,
     MatButtonModule,
     LoginModule,
-    SidenavModule
+    SidenavModule,
+    CommonModule,
+    FormsModule,
+    MatChipsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

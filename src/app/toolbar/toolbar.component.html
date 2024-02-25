@@ -1,14 +1,32 @@
 <div class="toolbar-container">
     <div class="item-cnt">
-        1-10 of {{totalResults}} results
+        {{itemRange}} of {{totalResults}} results
     </div>
     <div class="filter-sort-container">
         <div class="filter">
-            filters
+            <!-- <mat-form-field class="example-chip-list" appearance="fill"> -->
+                <mat-basic-chip #chipList aria-label="Fruit selection">
+                  <mat-chip
+                    *ngFor="let filter of filters; let i = index"
+                    (removed)="remove(i)">
+                    {{filter.name}}
+                    <button matChipRemove>
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                  </mat-chip>
+                </mat-basic-chip>
+              <!-- </mat-form-field> -->
+              
         </div>
         <div class="sorting">
-            sorting
+            <!-- <mat-form-field appearance="fill">
+                <mat-select [(value)]="selectedSort" (selectionChange)="onSort($event)">
+                  <mat-option [value]="option" *ngFor="let option of sortOptions">{{option.name}}</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+              <select name="quantity" autocomplete="off" (change)="onSort($event)" [(ngModel)]="selectedSort">
+                <option [value]="option.id" *ngFor="let option of sortOptions">{{option.name}}</option>
+            </select>
         </div>
     </div>
 </div>
-
